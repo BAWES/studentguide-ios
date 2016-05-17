@@ -29,6 +29,7 @@
 		77DBE4131CEB03BC00FE8AC5 /* ContactUsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE4121CEB03BC00FE8AC5 /* ContactUsPage.m */; };
 		77DBE4171CEB43F400FE8AC5 /* SubCategoryListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE4161CEB43F400FE8AC5 /* SubCategoryListPage.m */; };
 		77DBE41B1CEB4CCF00FE8AC5 /* SchoolsListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE41A1CEB4CCF00FE8AC5 /* SchoolsListPage.m */; };
+		77DBE41F1CEB62B900FE8AC5 /* DetaliPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE41E1CEB62B900FE8AC5 /* DetaliPage.m */; };
 		9910F2271CE3744600B96510 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9910F2261CE3744600B96510 /* main.m */; };
 		9910F22A1CE3744600B96510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9910F2291CE3744600B96510 /* AppDelegate.m */; };
 		9910F2321CE3744600B96510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9910F2311CE3744600B96510 /* Assets.xcassets */; };
@@ -98,6 +99,8 @@
 		77DBE4161CEB43F400FE8AC5 /* SubCategoryListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryListPage.m; sourceTree = "<group>"; };
 		77DBE4191CEB4CCF00FE8AC5 /* SchoolsListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolsListPage.h; sourceTree = "<group>"; };
 		77DBE41A1CEB4CCF00FE8AC5 /* SchoolsListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolsListPage.m; sourceTree = "<group>"; };
+		77DBE41D1CEB62B900FE8AC5 /* DetaliPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetaliPage.h; sourceTree = "<group>"; };
+		77DBE41E1CEB62B900FE8AC5 /* DetaliPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetaliPage.m; sourceTree = "<group>"; };
 		9910F2221CE3744600B96510 /* StudentsGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentsGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9910F2261CE3744600B96510 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9910F2281CE3744600B96510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -288,9 +291,19 @@
 			name = "Schools List Page";
 			sourceTree = "<group>";
 		};
+		77DBE4201CEB62C100FE8AC5 /* Detail page */ = {
+			isa = PBXGroup;
+			children = (
+				77DBE41D1CEB62B900FE8AC5 /* DetaliPage.h */,
+				77DBE41E1CEB62B900FE8AC5 /* DetaliPage.m */,
+			);
+			name = "Detail page";
+			sourceTree = "<group>";
+		};
 		9910F2191CE3744600B96510 = {
 			isa = PBXGroup;
 			children = (
+				77DBE4201CEB62C100FE8AC5 /* Detail page */,
 				77DBE41C1CEB4E0A00FE8AC5 /* Schools List Page */,
 				77DBE4181CEB43FA00FE8AC5 /* SubCategoryList Page */,
 				77DBE4141CEB03CA00FE8AC5 /* Contact Us Page */,
@@ -591,6 +604,7 @@
 				9910F2761CE3761800B96510 /* NSString+validation.m in Sources */,
 				9910F2671CE374A000B96510 /* GlobalClass.m in Sources */,
 				771397901CE59A5F0002CB9A /* UIView+viewRecursion.m in Sources */,
+				77DBE41F1CEB62B900FE8AC5 /* DetaliPage.m in Sources */,
 				9910F25D1CE3746E00B96510 /* STHTTPRequest.m in Sources */,
 				9910F2271CE3744600B96510 /* main.m in Sources */,
 				7713979E1CE5D7A80002CB9A /* MBProgressHUD.m in Sources */,

@@ -41,4 +41,5 @@
 #import "SubCategoryListPage.h"
 #import "SearchDisplayController.h"
 #import "SchoolsListPage.h"
+#import "DetaliPage.h"
 #endif /* PrefixHeader_pch */
