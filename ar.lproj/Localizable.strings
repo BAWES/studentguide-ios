@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  StudentsGuide
+
+  Created by Karthick on 13/05/16.
+  Copyright © 2016 sadeeshmac. All rights reserved.
+*/
+
+// Home page
+
+"English" = "الإنجليزية";
+"Arabic" = "العربية";
+"Terms & Condition" = "الشروط والأحكام";
+
+// loading progress
+
+"Please wait..." = "...أرجو الإنتظار";
+
+//Terms and condition
+
+
+
+// Course List page
+
+"I'm looking for" = "أنا أبحث عن";
+
+
+//search controll
+"Type to search" = "اكتب للبحث";

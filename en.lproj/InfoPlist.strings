@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  StudentsGuide
+
+  Created by Karthick on 13/05/16.
+  Copyright © 2016 sadeeshmac. All rights reserved.
+*/
+
+
+// Set App name in English
+"CFBundleDisplayName" = "Student Guide";
+"CFBundleName" = "Student Guide";

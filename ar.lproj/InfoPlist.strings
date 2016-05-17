@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  StudentsGuide
+
+  Created by Karthick on 13/05/16.
+  Copyright © 2016 sadeeshmac. All rights reserved.
+*/
+
+
+// Set App name in Arabic
+
+"CFBundleDisplayName" = "دليل الطالب";
+"CFBundleName" = "دليل الطالب";
