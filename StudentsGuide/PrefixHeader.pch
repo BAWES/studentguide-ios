@@ -37,4 +37,6 @@
 
 #import "CourseListPage.h"
 
+#import "ContactUsPage.h"
+
 #endif /* PrefixHeader_pch */

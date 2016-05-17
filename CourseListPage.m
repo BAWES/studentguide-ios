@@ -19,7 +19,7 @@
 
 @implementation CourseListPage
 
-@synthesize courseTable,titleLbl,searchBtn,dotLineImg;
+@synthesize courseTable,titleLbl,searchBtn,dotLineImg,bottonTabbarImg;
 
 - (void)viewDidLoad
 {
@@ -35,6 +35,9 @@
 
     titleLbl.text = LocalizedString(@"I'm looking for");
     [GlobalClass setTopTitleLabel:titleLbl];
+    
+    
+    bottonTabbarImg.backgroundColor = [UIColor customTabbarColor];
     
     NSString * userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
     NSString *language = [userLanguage substringToIndex:2];
@@ -103,7 +106,11 @@
 {
     return 1;
 }
-
+// number of row in the section, I assume there is only 1 row
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [recipes count];
+}
 // the cell will be returned to the tableView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -137,30 +144,24 @@
     return 70;
 }
 
-- (IBAction)search:(id)sender
+
+# pragma mark Button Action
+- (IBAction)search:(id)sender // search bar biutton action
 {
     
-    if (!isSearch)
+    if (!isSearch) // isSearch = no means open popup
     {
         isSearch = YES;
-        
+
+        dotLineImg.hidden = YES;
         [searchBtn setImage:[UIImage imageNamed:@"cross"] forState:UIControlStateNormal];
-        
         search = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchDisplayController"];
-        search.view.frame = CGRectMake(0,55,self.view.frame.size.width ,self.view.frame.size.height-110);
-        //[search.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
-//        NSDictionary *views = @{@"search": search.view};
-//        
-//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[search]-|" options:0 metrics:nil
-//                                                                            views:views]];
-//        
-//        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-55-[search]-55-|" options:0  metrics:nil views:views]];
-        
-        [self.view addSubview:search.view];
+        search.view.frame = courseTable.frame; // set frame for searchvontroller view
+        [self.view addSubview:search.view]; // set popup
     }
-    else
+    else // isSearch == yes means remove popup
     {
+        dotLineImg.hidden = NO;
         [search.view removeFromSuperview];
         [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
         isSearch = NO;
@@ -168,10 +169,19 @@
     
   }
 
-// number of row in the section, I assume there is only 1 row
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (IBAction)contactUs:(id)sender  // open contact us page
 {
-        return [recipes count];
+    ContactUsPage *contactPage = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactUsPage"];
+    [self.navigationController pushViewController:contactPage animated:YES];
+    
 }
+
+- (IBAction)home:(id)sender // open home page 
+{
+    HomePage *homepage = [self.storyboard instantiateViewControllerWithIdentifier:@"HomePage"];
+    [self presentViewController:homepage animated:YES completion:nil];
+}
+
+
 
 @end

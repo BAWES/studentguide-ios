@@ -10,7 +10,7 @@
 
 #import "PrefixHeader.pch"
 
-@interface SearchDisplayController : UIViewController<UISearchBarDelegate,UISearchResultsUpdating>
+@interface SearchDisplayController : UIViewController<UISearchBarDelegate>
 
 {
     NSArray *searchResultsArray;

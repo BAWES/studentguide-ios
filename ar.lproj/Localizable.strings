@@ -27,3 +27,24 @@
 
 //search controll
 "Type to search" = "اكتب للبحث";
+
+
+// Contact Us PAge
+
+"Submit" = "عرض";
+
+"Contact number" = "رقم الاتصال";
+
+"Name" = "اسم";
+
+"Contact US" ="اتصل بنا";
+
+"Message"  = "الرسالة";
+
+"Please enter your message" = "الرجاء إدخال رسالتك";
+
+"Please enter your name" = "من فضلك أدخل إسمك";
+
+"Please enter your contact number" = "الرجاء إدخال رقم الاتصال الخاصة بك";
+
+//

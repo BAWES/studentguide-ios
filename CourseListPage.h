@@ -24,7 +24,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *searchBtn;
 @property (strong, nonatomic) IBOutlet UILabel *titleLbl;
 @property (strong, nonatomic) IBOutlet UIImageView *dotLineImg;
+@property (strong, nonatomic) IBOutlet UIImageView *bottonTabbarImg;
+@property (strong, nonatomic) IBOutlet UIButton *homeBtn;
+@property (strong, nonatomic) IBOutlet UIButton *contactusBtn;
 
 - (IBAction)search:(id)sender;
+- (IBAction)contactUs:(id)sender;
+- (IBAction)home:(id)sender;
 
 @end

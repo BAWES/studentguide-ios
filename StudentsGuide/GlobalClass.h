@@ -16,7 +16,7 @@
 #import "MBProgressHUD.h"
 
 
-@interface GlobalClass : NSObject <UIAlertViewDelegate,UITextFieldDelegate>
+@interface GlobalClass : NSObject <UIAlertViewDelegate,UITextFieldDelegate,UITextViewDelegate>
 {
     
 }
@@ -24,8 +24,6 @@
 +(void)showToast:(NSString *)title message:(NSString *)Message view:(UIViewController *)View;
 
 +(void)showAlertwithtitle:(NSString *)title message:(NSString *)Message view:(UIViewController *)View;
-
-+(void)animateTextField:(UITextField*)textField1 txt:(UIView *)viewc up:(BOOL)up;
 
 +(void)animateTextField:(UITextField*)textField1 txt:(UIView *)viewc val:(int)value up:(BOOL)up;
 
@@ -62,5 +60,9 @@
 +(void)setSearchTableSubTitleLbl:(UILabel*)label;
 
 +(void)setSearchTableTitleLbl:(UILabel*)label;
+
++(void)setUPTextfield:(UITextField *)textField;
+
+
 
 @end

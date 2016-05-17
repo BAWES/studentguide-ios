@@ -14,6 +14,11 @@
 
 //[[AppDelegate appdelegate]showGlobalProgressHUDWithTitle:@""];
 #define IS_IOS_GREATER_EQUAL8     ([[UIDevice currentDevice].systemVersion compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending)
+@interface GlobalClass () <UITextFieldDelegate>
+{
+    
+}
+@end
 
 @implementation GlobalClass
 
@@ -108,18 +113,6 @@
 
 # pragma mark animate Textfield
 //animated textfield
-+(void)animateTextField:(UITextField*)textField1 txt:(UIView *)viewc up:(BOOL)up
-{
-    const int movementDistance =-80;// -130; // tweak as needed
-    const float movementDuration = 0.3f; // tweak as needed
-    int movement = (up ? movementDistance : -movementDistance);
-    [UIView beginAnimations: @"animateTextField" context: nil];
-    [UIView setAnimationBeginsFromCurrentState: YES];
-    [UIView setAnimationDuration: movementDuration];
-    viewc.frame = CGRectOffset(viewc.frame, 0, movement);
-    [UIView commitAnimations];
-}
-//animated textfield
 +(void)animateTextField:(UITextField*)textField1 txt:(UIView *)viewc val:(int)value up:(BOOL)up
 {
     const int movementDistance =-value;// -130; // tweak as needed
@@ -167,6 +160,19 @@
     [textField.layer addSublayer:textFieldbottomBorder];
 }
 
++(void)setUPTextfield:(UITextField *)textField
+{
+     [textField setValue:[UIColor whiteColor]forKeyPath:@"_placeholderLabel.textColor"];
+//    textField.delegate = view;
+    textField.textColor = [UIColor customWhiteColor];
+    textField.font = [UIFont customEnglishFontRegular10];
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:Language] isEqualToString:@"ar"]) // is arabic language
+    {
+    textField.font = [UIFont customArabicFontRegular10];
+    }
+}
+
+
 # pragma mark - set Button Border
 +(void)setBorder:(UIButton *)button // set button setup
 {
@@ -198,14 +204,7 @@
 // Create bar button for global
 +(UIBarButtonItem *)NewButtonInView:(UIView *)view withAction:(SEL)actionbutton withTarget:(id)target
 {
-    
-    //    UIButton *button = [[UIButton alloc] init];
-    //    button.frame = CGRectMake(0, 0, 50, 50);
-    //    [button addTarget: target action:actionbutton forControlEvents:UIControlEventTouchUpInside];
-    
     UIBarButtonItem *menuBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"menu"] style:UIBarButtonItemStyleBordered target:self action:nil];
-    
-    //    self.navigationItem.leftBarButtonItem = menuBarButton;
     return menuBarButton;
 }
 
