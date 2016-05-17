@@ -89,21 +89,23 @@
         {
             //        [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
             [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+            [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
         }
         else if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"en"])
         {
             [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+             [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
         }
 
         
-        if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"ar"])
-        {
-            [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
-        }
-        else if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"en"])
-        {
-            [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
-        }
+//        if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"ar"])
+//        {
+//            [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
+//        }
+//        else if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"en"])
+//        {
+//            [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
+//        }
     }
 }
 

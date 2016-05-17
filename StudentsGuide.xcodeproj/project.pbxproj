@@ -27,6 +27,8 @@
 		77589D471CE48839002A9C51 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77589D451CE48839002A9C51 /* Model.xcdatamodeld */; };
 		77B66B5C1CE7003200D3D971 /* SearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77B66B5B1CE7003200D3D971 /* SearchDisplayController.m */; };
 		77DBE4131CEB03BC00FE8AC5 /* ContactUsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE4121CEB03BC00FE8AC5 /* ContactUsPage.m */; };
+		77DBE4171CEB43F400FE8AC5 /* SubCategoryListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE4161CEB43F400FE8AC5 /* SubCategoryListPage.m */; };
+		77DBE41B1CEB4CCF00FE8AC5 /* SchoolsListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DBE41A1CEB4CCF00FE8AC5 /* SchoolsListPage.m */; };
 		9910F2271CE3744600B96510 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9910F2261CE3744600B96510 /* main.m */; };
 		9910F22A1CE3744600B96510 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9910F2291CE3744600B96510 /* AppDelegate.m */; };
 		9910F2321CE3744600B96510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9910F2311CE3744600B96510 /* Assets.xcassets */; };
@@ -92,6 +94,10 @@
 		77B66B5B1CE7003200D3D971 /* SearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDisplayController.m; sourceTree = "<group>"; };
 		77DBE4111CEB03BC00FE8AC5 /* ContactUsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsPage.h; sourceTree = "<group>"; };
 		77DBE4121CEB03BC00FE8AC5 /* ContactUsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsPage.m; sourceTree = "<group>"; };
+		77DBE4151CEB43F400FE8AC5 /* SubCategoryListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryListPage.h; sourceTree = "<group>"; };
+		77DBE4161CEB43F400FE8AC5 /* SubCategoryListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryListPage.m; sourceTree = "<group>"; };
+		77DBE4191CEB4CCF00FE8AC5 /* SchoolsListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolsListPage.h; sourceTree = "<group>"; };
+		77DBE41A1CEB4CCF00FE8AC5 /* SchoolsListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolsListPage.m; sourceTree = "<group>"; };
 		9910F2221CE3744600B96510 /* StudentsGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentsGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9910F2261CE3744600B96510 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9910F2281CE3744600B96510 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -264,9 +270,29 @@
 			name = "Contact Us Page";
 			sourceTree = "<group>";
 		};
+		77DBE4181CEB43FA00FE8AC5 /* SubCategoryList Page */ = {
+			isa = PBXGroup;
+			children = (
+				77DBE4151CEB43F400FE8AC5 /* SubCategoryListPage.h */,
+				77DBE4161CEB43F400FE8AC5 /* SubCategoryListPage.m */,
+			);
+			name = "SubCategoryList Page";
+			sourceTree = "<group>";
+		};
+		77DBE41C1CEB4E0A00FE8AC5 /* Schools List Page */ = {
+			isa = PBXGroup;
+			children = (
+				77DBE4191CEB4CCF00FE8AC5 /* SchoolsListPage.h */,
+				77DBE41A1CEB4CCF00FE8AC5 /* SchoolsListPage.m */,
+			);
+			name = "Schools List Page";
+			sourceTree = "<group>";
+		};
 		9910F2191CE3744600B96510 = {
 			isa = PBXGroup;
 			children = (
+				77DBE41C1CEB4E0A00FE8AC5 /* Schools List Page */,
+				77DBE4181CEB43FA00FE8AC5 /* SubCategoryList Page */,
 				77DBE4141CEB03CA00FE8AC5 /* Contact Us Page */,
 				77DBE4101CEB037400FE8AC5 /* Search Display Controller */,
 				771397A21CE5E8080002CB9A /* CourseList Page */,
@@ -552,9 +578,11 @@
 			files = (
 				9910F22A1CE3744600B96510 /* AppDelegate.m in Sources */,
 				9910F27A1CE3762B00B96510 /* UIColor+custom.m in Sources */,
+				77DBE41B1CEB4CCF00FE8AC5 /* SchoolsListPage.m in Sources */,
 				771397A11CE5E8030002CB9A /* CourseListPage.m in Sources */,
 				9910F26E1CE3750000B96510 /* LocalizeHelper.m in Sources */,
 				77B66B5C1CE7003200D3D971 /* SearchDisplayController.m in Sources */,
+				77DBE4171CEB43F400FE8AC5 /* SubCategoryListPage.m in Sources */,
 				77589D471CE48839002A9C51 /* Model.xcdatamodeld in Sources */,
 				771397961CE5B22E0002CB9A /* TermsAndCondition.m in Sources */,
 				9910F25C1CE3746E00B96510 /* APICall.m in Sources */,

@@ -60,7 +60,7 @@
     
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
     
-    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
+        if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
     {
         if ([language isEqualToString:@"ar"]&&[[GlobalClass getLanguage] isEqualToString:@"ar"])
         {
@@ -72,21 +72,21 @@
             self.nameTxt.textAlignment = NSTextAlignmentRight;
             self.textView.textAlignment = NSTextAlignmentRight;
             
-            
             [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
-            // [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
         }
         else if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"ar"])
         {
             self.contactTxt.textAlignment = NSTextAlignmentRight;
             self.nameTxt.textAlignment = NSTextAlignmentRight;
             self.textView.textAlignment = NSTextAlignmentRight;
+            //[_backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
+            
             [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
-            // [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
         }
         else if ([language isEqualToString:@"en"]&&[[GlobalClass getLanguage] isEqualToString:@"en"])
         {
             [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+            //[_backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
         }
     }
     else
@@ -201,10 +201,12 @@
 
 }
 
+# pragma mark - button action
 - (IBAction)back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (IBAction)submit:(id)sender
 {

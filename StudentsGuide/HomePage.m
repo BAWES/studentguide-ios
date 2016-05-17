@@ -36,6 +36,7 @@
     [termsCondotion setTitleColor:[UIColor customBtnTitleColor] forState:UIControlStateNormal];
     [termsCondotion setBackgroundColor:[UIColor customBtnClearColor]];
     termsCondotion.titleLabel.font = [UIFont customEnglishFontRegular10];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +54,8 @@
 //        [self changeViewRTL:tempView];
 //    }
     
+    [self.arabicBtn setBackgroundColor:[UIColor customNavigationColor]];
+    [self.englishBtn setBackgroundColor:[UIColor clearColor]];
     [GlobalClass setLanguage:@"ar"];
     LocalizationSetLanguage(@"ar");
     LocalizedString(@"ar");
@@ -91,6 +94,10 @@
 
 - (IBAction)englishChoose:(id)sender  // chooose English
 {
+    [self.englishBtn setBackgroundColor:[UIColor customNavigationColor]];
+    [self.arabicBtn setBackgroundColor:[UIColor clearColor]];
+    
+    
     [GlobalClass setLanguage:@"en"];
     LocalizationSetLanguage(@"en");
     LocalizedString(@"en");

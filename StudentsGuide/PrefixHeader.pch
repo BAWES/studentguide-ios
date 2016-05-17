@@ -38,5 +38,7 @@
 #import "CourseListPage.h"
 
 #import "ContactUsPage.h"
-
+#import "SubCategoryListPage.h"
+#import "SearchDisplayController.h"
+#import "SchoolsListPage.h"
 #endif /* PrefixHeader_pch */

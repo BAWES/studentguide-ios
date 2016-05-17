@@ -212,12 +212,44 @@
     
 //    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(50)]" options:0 metrics:nil views:views]];
    //    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[loactionImage(20)]" options:0 metrics:nil views:views]];
+//    
+//    [cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeLeftMargin relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeLeftMargin multiplier:1.0 constant:0]];
+//     [cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
     
-    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(50)]-[titleLbl]-10-|" options:0 metrics:nil views:views]];
     
-    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(50)]-[loactionImage(20)]-[subTitleLbl]-10-|" options:0 metrics:nil views:views]];
+    if ([[GlobalClass getLanguage] isEqualToString:@"ar"])
+    {
+         //[cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeRightMargin relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeRightMargin multiplier:1.0 constant:0]];
+        
+        [cell addConstraint: [NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeRight multiplier:1 constant:-8]];
+        
+        [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(50)]-8-[titleLbl]-10-|" options:0 metrics:nil views:views]];
+        
+        [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(50)]-8-[loactionImage(20)]-[subTitleLbl]-10-|" options:0 metrics:nil views:views]];
+        
+        
+        
+        [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imageView(50)]" options:0 metrics:nil views:views]];
+        
+        [cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
+        
+        [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[titleLbl(20)]-10-[subTitleLbl(20)]-10-|" options:0 metrics:nil views:views]];
+        
+        [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[titleLbl(20)]-8-[loactionImage(20)]" options:0 metrics:nil views:views]];
+
+    }
+    else
+    {
+//        [cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeLeftMargin relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeLeftMargin multiplier:1.0 constant:0]];
+        
+        [cell addConstraint: [NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:8]];
+
+        
+    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[imageView(50)]-[titleLbl]-10-|" options:0 metrics:nil views:views]];
     
-    [cell addConstraint:[NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeLeftMargin relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeLeftMargin multiplier:1.0 constant:0]];
+    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[imageView(50)]-[loactionImage(20)]-[subTitleLbl]-10-|" options:0 metrics:nil views:views]];
+    
+    
     
     [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imageView(50)]" options:0 metrics:nil views:views]];
     
@@ -226,6 +258,7 @@
     [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[titleLbl(20)]-5-[subTitleLbl(20)]" options:0 metrics:nil views:views]];
     
     [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[titleLbl(20)]-5-[loactionImage(20)]" options:0 metrics:nil views:views]];
+    }
     
     
 //    [cell addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[imageView(50)]-8-[titleLbl(20)]-5-[loactionImage(20)]" options:0 metrics:nil views:views]];
@@ -250,6 +283,29 @@
     }
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+-(void)viewDidLayoutSubviews
+{
+    if ([self.searchTableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.searchTableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.searchTableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.searchTableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
