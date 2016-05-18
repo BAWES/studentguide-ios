@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "PrefixHeader.pch"
-@interface DetaliPage : UIViewController <UITextViewDelegate,UITextFieldDelegate>
+#import "DetailCell.h"
+#import "iCarousel.h"
+
+@interface DetaliPage : UIViewController <UITextViewDelegate,UITextFieldDelegate,iCarouselDataSource, iCarouselDelegate>
 {
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *table;
+
+//@property (nonatomic, strong) IBOutlet iCarousel *carousel;
+
+
+
 
 @end

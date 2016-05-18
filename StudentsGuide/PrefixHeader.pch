@@ -41,5 +41,15 @@
 #import "SubCategoryListPage.h"
 #import "SearchDisplayController.h"
 #import "SchoolsListPage.h"
+
+
+#import "DetailCell.h"
 #import "DetaliPage.h"
+#import <MapKit/MapKit.h>
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+#import "HCYoutubeParser.h"
+#import <QuartzCore/QuartzCore.h>
+#import <MediaPlayer/MediaPlayer.h>
 #endif /* PrefixHeader_pch */

@@ -208,6 +208,8 @@ NSArray *searchResults;
 // when user tap the row, what action you want to perform
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DetaliPage *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"DetaliPage"];
+    [self.navigationController pushViewController:detail animated:YES];
     NSLog(@"selected %ld row", (long)indexPath.row);
 }
 // set uitableview cell height manually
