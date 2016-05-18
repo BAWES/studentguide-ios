@@ -933,6 +933,17 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkw-51-5tO">
+                                <rect key="frame" x="276" y="38" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="3w7-ew-BAP"/>
+                                    <constraint firstAttribute="width" constant="34" id="O1D-QY-Blv"/>
+                                </constraints>
+                                <state key="normal" image="locationcircle"/>
+                                <connections>
+                                    <action selector="filter:" destination="SBs-0M-kPp" eventType="touchUpInside" id="Ok8-XN-1E0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -945,7 +956,9 @@
                             <constraint firstItem="1CK-xk-HZb" firstAttribute="top" secondItem="waY-bu-bxQ" secondAttribute="bottom" constant="61" id="E1p-Vn-ad5"/>
                             <constraint firstItem="1CK-xk-HZb" firstAttribute="top" secondItem="fhT-0K-6I0" secondAttribute="bottom" constant="45" id="E3a-rJ-teg"/>
                             <constraint firstItem="Rup-ui-agV" firstAttribute="top" secondItem="JPz-c6-9YU" secondAttribute="bottom" constant="20" id="EOH-4h-jWt"/>
+                            <constraint firstItem="1CK-xk-HZb" firstAttribute="top" secondItem="lkw-51-5tO" secondAttribute="bottom" constant="43" id="FaG-9C-Tcb"/>
                             <constraint firstAttribute="trailing" secondItem="fhT-0K-6I0" secondAttribute="trailing" id="H3x-w4-pBJ"/>
+                            <constraint firstAttribute="trailing" secondItem="lkw-51-5tO" secondAttribute="trailing" constant="10" id="HAR-rl-tBH"/>
                             <constraint firstAttribute="trailing" secondItem="vcp-oU-WOi" secondAttribute="trailing" constant="54" id="HKl-MJ-LIm"/>
                             <constraint firstItem="hcb-XI-VqN" firstAttribute="top" secondItem="1CK-xk-HZb" secondAttribute="bottom" constant="25" id="K5K-AZ-maN"/>
                             <constraint firstItem="Rup-ui-agV" firstAttribute="top" secondItem="hcb-XI-VqN" secondAttribute="bottom" id="Lo3-n0-KeS"/>
@@ -958,6 +971,7 @@
                             <constraint firstItem="Ogk-Ip-M1a" firstAttribute="top" secondItem="fhT-0K-6I0" secondAttribute="bottom" constant="3" id="XhT-WP-83L"/>
                             <constraint firstItem="1CK-xk-HZb" firstAttribute="leading" secondItem="nj1-VM-QKN" secondAttribute="leading" id="ZP3-QL-tgl"/>
                             <constraint firstItem="1CK-xk-HZb" firstAttribute="top" secondItem="vcp-oU-WOi" secondAttribute="bottom" constant="8" id="ZXF-EJ-6vt"/>
+                            <constraint firstItem="lkw-51-5tO" firstAttribute="leading" secondItem="d5D-V3-LW8" secondAttribute="trailing" constant="10" id="Zep-DJ-rtq"/>
                             <constraint firstItem="waY-bu-bxQ" firstAttribute="top" secondItem="nj1-VM-QKN" secondAttribute="top" constant="19" id="ZyO-ZU-zQQ"/>
                             <constraint firstItem="4bd-KI-3h2" firstAttribute="leading" secondItem="nj1-VM-QKN" secondAttribute="leading" id="c0L-b7-0jA"/>
                             <constraint firstAttribute="trailing" secondItem="d5D-V3-LW8" secondAttribute="trailing" constant="54" id="dnn-2x-lOx"/>
@@ -966,6 +980,7 @@
                             <constraint firstItem="fhT-0K-6I0" firstAttribute="leading" secondItem="nj1-VM-QKN" secondAttribute="leading" id="flR-m8-kMS"/>
                             <constraint firstItem="JPz-c6-9YU" firstAttribute="top" secondItem="1CK-xk-HZb" secondAttribute="bottom" id="iK4-vC-eFX"/>
                             <constraint firstItem="d5D-V3-LW8" firstAttribute="leading" secondItem="waY-bu-bxQ" secondAttribute="trailing" constant="8" id="iLi-UY-AwS"/>
+                            <constraint firstItem="lkw-51-5tO" firstAttribute="top" secondItem="Ayi-3W-shA" secondAttribute="bottom" constant="18" id="jxQ-Vh-1bS"/>
                             <constraint firstItem="1CK-xk-HZb" firstAttribute="top" secondItem="4bd-KI-3h2" secondAttribute="bottom" constant="-2" id="njQ-qy-mpz"/>
                             <constraint firstItem="vcp-oU-WOi" firstAttribute="top" secondItem="fhT-0K-6I0" secondAttribute="bottom" constant="3" id="slX-V9-f5m"/>
                             <constraint firstItem="waY-bu-bxQ" firstAttribute="leading" secondItem="nj1-VM-QKN" secondAttribute="leading" constant="7" id="uGT-hb-qjw"/>
@@ -980,6 +995,7 @@
                         <outlet property="contactusBtn" destination="Ggc-Ku-juQ" id="lrA-nv-pD8"/>
                         <outlet property="courseTable" destination="1CK-xk-HZb" id="TZE-Ql-zlr"/>
                         <outlet property="dotLineImg" destination="fhT-0K-6I0" id="B4G-9B-6aS"/>
+                        <outlet property="filterBtn" destination="lkw-51-5tO" id="h2c-Ly-IXr"/>
                         <outlet property="homeBtn" destination="eNB-UB-guq" id="JVJ-WF-hMf"/>
                         <outlet property="searchBtn" destination="waY-bu-bxQ" id="8hZ-8y-twB"/>
                         <outlet property="searchDisplayController" destination="Ft0-mw-1mZ" id="efV-ue-YjG"/>
@@ -1061,6 +1077,7 @@
         <image name="dotLine" width="734" height="64"/>
         <image name="home-circle" width="34" height="34"/>
         <image name="line" width="34" height="34"/>
+        <image name="locationcircle" width="34" height="34"/>
         <image name="messagecircle" width="34" height="34"/>
         <image name="search" width="34" height="34"/>
     </resources>

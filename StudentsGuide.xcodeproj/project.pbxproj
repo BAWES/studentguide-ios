@@ -252,6 +252,38 @@
 			name = "CourseList Page";
 			sourceTree = "<group>";
 		};
+		77307D3C1CECB7C300003D1F /* Youtube */ = {
+			isa = PBXGroup;
+			children = (
+				77307D381CEC9D7400003D1F /* play_button.png */,
+				77307D391CEC9D7400003D1F /* play_button@2x.png */,
+				77307D351CEC8AC400003D1F /* HCYoutubeParser.h */,
+				77307D361CEC8AC400003D1F /* HCYoutubeParser.m */,
+			);
+			name = Youtube;
+			sourceTree = "<group>";
+		};
+		77307D3D1CECB7CE00003D1F /* Frame Work */ = {
+			isa = PBXGroup;
+			children = (
+				77307D281CEC3D3200003D1F /* MapKit.framework */,
+				77307D331CEC6F6400003D1F /* Foundation.framework */,
+				77307D2F1CEC6F5C00003D1F /* AVFoundation.framework */,
+				77307D301CEC6F5C00003D1F /* AVKit.framework */,
+				77307D2D1CEC6F0200003D1F /* VideoToolbox.framework */,
+			);
+			name = "Frame Work";
+			sourceTree = "<group>";
+		};
+		77307D3E1CECB7D800003D1F /* Gallery  */ = {
+			isa = PBXGroup;
+			children = (
+				77307D2A1CEC666D00003D1F /* iCarousel.h */,
+				77307D2B1CEC666D00003D1F /* iCarousel.m */,
+			);
+			name = "Gallery ";
+			sourceTree = "<group>";
+		};
 		77589D2E1CE4417F002A9C51 /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,17 +365,9 @@
 		9910F2191CE3744600B96510 = {
 			isa = PBXGroup;
 			children = (
-				77307D381CEC9D7400003D1F /* play_button.png */,
-				77307D391CEC9D7400003D1F /* play_button@2x.png */,
-				77307D351CEC8AC400003D1F /* HCYoutubeParser.h */,
-				77307D361CEC8AC400003D1F /* HCYoutubeParser.m */,
-				77307D331CEC6F6400003D1F /* Foundation.framework */,
-				77307D2F1CEC6F5C00003D1F /* AVFoundation.framework */,
-				77307D301CEC6F5C00003D1F /* AVKit.framework */,
-				77307D2D1CEC6F0200003D1F /* VideoToolbox.framework */,
-				77307D2A1CEC666D00003D1F /* iCarousel.h */,
-				77307D2B1CEC666D00003D1F /* iCarousel.m */,
-				77307D281CEC3D3200003D1F /* MapKit.framework */,
+				77307D3C1CECB7C300003D1F /* Youtube */,
+				77307D3D1CECB7CE00003D1F /* Frame Work */,
+				77307D3E1CECB7D800003D1F /* Gallery  */,
 				77DBE4201CEB62C100FE8AC5 /* Detail page */,
 				77DBE41C1CEB4E0A00FE8AC5 /* Schools List Page */,
 				77DBE4181CEB43FA00FE8AC5 /* SubCategoryList Page */,

@@ -22,6 +22,7 @@
     BOOL isSearch;
 }
 @property(strong ,nonatomic)IBOutlet NSString *subtitleStr;
+@property (strong, nonatomic) IBOutlet UIButton *filterBtn;
 
 @property (strong, nonatomic) IBOutlet UIImageView *subNavigationBarImg;
 @property (strong, nonatomic) IBOutlet UITableView *courseTable;
@@ -38,6 +39,7 @@
 - (IBAction)contactUs:(id)sender;
 - (IBAction)home:(id)sender;
 - (IBAction)back:(id)sender;
+- (IBAction)filter:(id)sender;
 
 
 @end

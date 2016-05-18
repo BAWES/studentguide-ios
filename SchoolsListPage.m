@@ -13,6 +13,8 @@
 SearchDisplayController *search;
 NSArray *recipes;
 NSArray *searchResults;
+    BOOL isSelect;
+    UIView *filterView;
 }
 @end
 
@@ -26,7 +28,15 @@ NSArray *searchResults;
     
     self.subNavigationBarImg.backgroundColor = [UIColor customNavigationColor];
     
+    filterView = [[UIView alloc]init];
+    filterView.frame = CGRectMake(-self.view.frame.size.width/2, 0, self.view.frame.size.width/2, self.view.frame.size.height);
+    filterView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:filterView];
+    
+    
+    
     isSearch = NO;
+    isSelect = NO;
     recipes = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
     
     
@@ -282,6 +292,34 @@ NSArray *searchResults;
 - (IBAction)back:(id)sender // back to root view
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)filter:(id)sender
+{
+    
+    if (isSelect)
+    {
+        isSelect = NO;
+//        CGRect napkinBottomFrame = filterView.frame;
+//        napkinBottomFrame.origin.x = -115;
+//        [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveEaseOut animations:^{ filterView.frame = napkinBottomFrame; } completion:^(BOOL finished){/*done*/}];
+   
+        CGRect napkinBottomFrame = filterView.frame;
+        napkinBottomFrame.origin.x = -filterView.frame.size.width;
+        [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveEaseOut animations:^{ filterView.frame = napkinBottomFrame; } completion:^(BOOL finished){/*done*/}];
+
+    }
+    else
+    {
+        isSelect = YES;
+        CGRect basketTopFrame = filterView.frame;
+        basketTopFrame.origin.x = 0;
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{ filterView.frame = basketTopFrame; } completion:^(BOOL finished){ }];
+        
+//        CGRect basketTopFrame = filterView.frame;
+//        basketTopFrame.origin.x = 0;
+//        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{ filterView.frame = basketTopFrame; } completion:^(BOOL finished){ }];
+    }
 }
 
 - (void)didReceiveMemoryWarning

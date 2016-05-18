@@ -603,11 +603,37 @@
 }
 -(void)gotoLocation
 {
-    NSLog(@"sdf");
+    float locLat;
+    float locLng;
+    NSString *locName;
+    
+//    locLat = [latitude floatValue];
+//    locLng = [longitude floatValue];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/maps?saddr=%f,%f&daddr=%f,%f",locLat,locLng,@"address1",@"address1"]];
+    if (![[UIApplication sharedApplication] canOpenURL:url])
+    {
+        NSLog(@"Google Maps app is not installed");
+    }
+    else
+    {
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/maps?saddr=%f,%f&daddr=%f,%f",locLat,locLng,[[GlobalAccessClass sharedResources].latVal floatValue],[[GlobalAccessClass sharedResources].lngVal floatValue]]];
+         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/maps?saddr=%f,%f&daddr=%f,%f",locLat,locLng,@"address1",@"address1"]];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+
 }
 -(void)gotoCall
 {
-    NSLog(@"sdf");
+    NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",@"9715168081"]];
+    
+    if ([[UIApplication sharedApplication] canOpenURL:phoneUrl])
+    {
+        [[UIApplication sharedApplication] openURL:phoneUrl];
+    } else
+    {
+        [GlobalClass showToast:@"" message:LocalizedString(@"Call facility is not available!!!") view:self];
+    }
+
 }
 -(void)callTwitter
 {
