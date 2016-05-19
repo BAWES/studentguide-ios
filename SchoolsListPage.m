@@ -29,9 +29,17 @@ NSArray *searchResults;
     self.subNavigationBarImg.backgroundColor = [UIColor customNavigationColor];
     
     filterView = [[UIView alloc]init];
-    filterView.frame = CGRectMake(-self.view.frame.size.width/2, 0, self.view.frame.size.width/2, self.view.frame.size.height);
     filterView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:filterView];
+    
+    if ([[GlobalClass getLanguage]isEqualToString:@"ar"])
+    {
+    filterView.frame = CGRectMake(-self.view.frame.size.width/2, 0, self.view.frame.size.width/2, self.view.frame.size.height);
+    }
+    else
+    {
+        filterView.frame = CGRectMake(self.view.frame.size.width, 0, self.view.frame.size.width/2, self.view.frame.size.height);
+    }
     
     
     
@@ -296,15 +304,12 @@ NSArray *searchResults;
 
 - (IBAction)filter:(id)sender
 {
-    
+    if ([[GlobalClass getLanguage]isEqualToString:@"ar"])
+    {
     if (isSelect)
     {
         isSelect = NO;
-//        CGRect napkinBottomFrame = filterView.frame;
-//        napkinBottomFrame.origin.x = -115;
-//        [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveEaseOut animations:^{ filterView.frame = napkinBottomFrame; } completion:^(BOOL finished){/*done*/}];
-   
-        CGRect napkinBottomFrame = filterView.frame;
+           CGRect napkinBottomFrame = filterView.frame;
         napkinBottomFrame.origin.x = -filterView.frame.size.width;
         [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveEaseOut animations:^{ filterView.frame = napkinBottomFrame; } completion:^(BOOL finished){/*done*/}];
 
@@ -315,10 +320,28 @@ NSArray *searchResults;
         CGRect basketTopFrame = filterView.frame;
         basketTopFrame.origin.x = 0;
         [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{ filterView.frame = basketTopFrame; } completion:^(BOOL finished){ }];
-        
-//        CGRect basketTopFrame = filterView.frame;
-//        basketTopFrame.origin.x = 0;
-//        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{ filterView.frame = basketTopFrame; } completion:^(BOOL finished){ }];
+    }
+    }
+    else
+    {
+        if (isSelect)
+        {
+            isSelect = NO;
+            
+            CGRect basketTopFrame = filterView.frame;
+            basketTopFrame.origin.x = 0;
+            [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{ filterView.frame = basketTopFrame; } completion:^(BOOL finished){ }];
+        }
+        else
+        {
+            isSelect = YES;
+            CGRect napkinBottomFrame = filterView.frame;
+            napkinBottomFrame.origin.x = -filterView.frame.size.width;
+            [UIView animateWithDuration:0.3 delay:0.0 options: UIViewAnimationOptionCurveEaseOut animations:^{ filterView.frame = napkinBottomFrame; } completion:^(BOOL finished){/*done*/}];
+            
+          
+        }
+
     }
 }
 

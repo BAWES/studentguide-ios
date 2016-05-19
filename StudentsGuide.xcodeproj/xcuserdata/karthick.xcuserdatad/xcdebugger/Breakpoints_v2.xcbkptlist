@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SchoolsListPage.m"
-            timestampString = "485277715.773719"
+            timestampString = "485326776.896016"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-filter:"
             landmarkType = "5">
          </BreakpointContent>
