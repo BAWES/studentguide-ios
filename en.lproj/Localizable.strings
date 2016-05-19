@@ -43,3 +43,15 @@
 "Please enter your name" = "Please enter your name";
 
 "Please enter your contact number" = "Please enter your contact number";
+
+// school list page
+
+"FILTER BY AREA" = "FILTER BY AREA";
+
+// detail page
+
+"ADDRESS" = "ADDRESS";
+"CONTACT" = "CONTACT";
+"DESCRIPTION" = "DESCRIPTION";
+"GALLERY" = "GALLERY";
+"VIDEO" = "VIDEO";

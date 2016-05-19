@@ -36,4 +36,5 @@
 
 +(UIColor *)customTopTitleColor;
 
++(UIColor *)selectBtnColor;
 @end

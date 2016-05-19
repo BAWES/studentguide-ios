@@ -86,4 +86,11 @@
     return  [UIColor whiteColor];
 }
 
++(UIColor *)selectBtnColor
+{
+    return [UIColor colorWithRed:0/255.0 green:189/255.0 blue:156/255.0 alpha:1.0];
+}
+
+
+
 @end

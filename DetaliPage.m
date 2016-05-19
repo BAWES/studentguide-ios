@@ -202,7 +202,7 @@
         UILabel *addressLbl = [[UILabel alloc]init];
         addressLbl.tag = 101;
         addressLbl.textColor = [UIColor blackColor];
-        addressLbl.text = @"Address";
+        addressLbl.text =  LocalizedString(@"ADDRESS");
         addressLbl.font = [UIFont customEnglishFontBold10];
         [cell.contentView addSubview:addressLbl];
         
@@ -270,7 +270,7 @@
         UILabel *contactLbl = [[UILabel alloc]init];
         contactLbl.tag =201;
         contactLbl.textColor = [UIColor blackColor];
-        contactLbl.text = @"CONTACT";
+        contactLbl.text =  LocalizedString(@"CONTACT");
         contactLbl.font = [UIFont customEnglishFontBold10];
         [cell.contentView addSubview:contactLbl];
         
@@ -338,7 +338,7 @@
         UILabel *descripLbl = [[UILabel alloc]init];
         descripLbl.textColor = [UIColor blackColor];
         descripLbl.tag = 301;
-        descripLbl.text = @"DESCRIPTION";
+        descripLbl.text =  LocalizedString(@"DESCRIPTION");
         descripLbl.font = [UIFont customEnglishFontBold10];
         [cell.contentView addSubview:descripLbl];
         
@@ -381,16 +381,17 @@
         UILabel *titleLbl = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, self.view.frame.size.width, 20)];
         titleLbl.textColor = [UIColor blackColor];
         titleLbl.tag = 501;
-        titleLbl.text = @"GALLERY";
+        titleLbl.text = LocalizedString(@"GALLERY");
         titleLbl.font = [UIFont customEnglishFontBold10];
         [cell.contentView addSubview:titleLbl];
         
         [carousel removeFromSuperview];
         carousel = [[iCarousel alloc]init];
+        carousel.backgroundColor = [UIColor orangeColor];
         carousel.tag = 401;
         carousel.delegate = self;
         carousel.dataSource = self;
-        carousel.frame = CGRectMake(self.view.frame.size.width/2-125, 0, 250, 250);
+        carousel.frame = CGRectMake(0, 40, self.view.frame.size.width, 200);
         carousel.type = iCarouselTypeRotary;
         [cell.contentView addSubview:carousel];
     }
@@ -399,7 +400,7 @@
         UILabel *titleLbl = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, self.view.frame.size.width, 20)];
         titleLbl.textColor = [UIColor blackColor];
         titleLbl.tag = 501;
-        titleLbl.text = @"VIDEO";
+        titleLbl.text = LocalizedString(@"VIDEO");
         titleLbl.font = [UIFont customEnglishFontBold10];
         [cell.contentView addSubview:titleLbl];
 
@@ -521,7 +522,7 @@
     }
     calculationView.text = text;
     CGSize size = [calculationView sizeThatFits:CGSizeMake(textViewWidth, FLT_MAX)];
-    return size.height;
+    return size.height+60;
 }
 #pragma mark - UITableViewDelegate
 // when user tap the row, what action you want to perform
@@ -551,7 +552,7 @@
     }
     else if (indexPath.row == 4)
     {
-        return 200;
+        return 280;
     }
     else if (indexPath.row == 5)
     {
@@ -650,40 +651,22 @@
 - (NSInteger)numberOfItemsInCarousel:(__unused iCarousel *)carousel
 {
 //    return (NSInteger)[self.items count];
-    return 20;
+    return 8;
 }
 
 - (UIView *)carousel:(__unused iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    UILabel *label = nil;
     
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"img"];
-        view.contentMode = UIViewContentModeCenter;
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = UITextAlignmentCenter;
-        label.font = [label.font fontWithSize:50];
-        label.tag = 1;
-        [view addSubview:label];
+//        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150.0f, 300.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width-80, 200)];
+
+        ((UIImageView *)view).image = [UIImage imageNamed:@"Bg"];
+        //view.contentMode = UIViewContentModeCenter;
+        view.contentMode = UIViewContentModeScaleToFill;
     }
-    else
-    {
-        //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
-    }
-    
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-//    label.text = [self.items[(NSUInteger)index] stringValue];
-    label.text = @"123";
-    
     return view;
 }
 
@@ -695,88 +678,67 @@
 
 - (UIView *)carousel:(__unused iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    UILabel *label = nil;
     
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        //don't do anything specific to the index within
-        //this `if (view == nil) {...}` statement because the view will be
-        //recycled and used with other index values later
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
-        view.contentMode = UIViewContentModeCenter;
-        
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = UITextAlignmentCenter;
-        label.font = [label.font fontWithSize:50.0f];
-        label.tag = 1;
-        [view addSubview:label];
+        //view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 600.0f, 600.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 200)];
+        ((UIImageView *)view).image = [UIImage imageNamed:@"img"];
+        //view.contentMode = UIViewContentModeCenter;
+        view.contentMode = UIViewContentModeScaleToFill;
     }
-    else
-    {
-        //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
-    }
-    
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-    label.text = (index == 0)? @"[": @"]";
-    
     return view;
 }
 
-- (CATransform3D)carousel:(__unused iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform
-{
-    //implement 'flip3D' style carousel
-    transform = CATransform3DRotate(transform, M_PI / 8.0f, 0.0f, 1.0f, 0.0f);
-    return CATransform3DTranslate(transform, 0.0f, 0.0f, offset * carousel.itemWidth);
-}
-
-//- (CGFloat)carousel:(__unused iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+//- (CATransform3D)carousel:(__unused iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform
 //{
-//    //customize carousel display
-//    switch (option)
-//    {
-//        case iCarouselOptionWrap:
-//        {
-//            //normally you would hard-code this to YES or NO
-//            return self.wrap;
-//        }
-//        case iCarouselOptionSpacing:
-//        {
-//            //add a bit of spacing between the item views
-//            return value * 1.05f;
-//        }
-//        case iCarouselOptionFadeMax:
-//        {
-//            if (self.carousel.type == iCarouselTypeCustom)
-//            {
-//                //set opacity based on distance from camera
-//                return 0.0f;
-//            }
-//            return value;
-//        }
-//        case iCarouselOptionShowBackfaces:
-//        case iCarouselOptionRadius:
-//        case iCarouselOptionAngle:
-//        case iCarouselOptionArc:
-//        case iCarouselOptionTilt:
-//        case iCarouselOptionCount:
-//        case iCarouselOptionFadeMin:
-//        case iCarouselOptionFadeMinAlpha:
-//        case iCarouselOptionFadeRange:
-//        case iCarouselOptionOffsetMultiplier:
-//        case iCarouselOptionVisibleItems:
-//        {
-//            return value;
-//        }
-//    }
+//    //implement 'flip3D' style carousel
+//    transform = CATransform3DRotate(transform, M_PI / 8.0f, 0.0f, 1.0f, 0.0f);
+//    return CATransform3DTranslate(transform, 0.0f, 0.0f, offset * carousel.itemWidth);
 //}
+
+- (CGFloat)carousel:(__unused iCarousel *)carousel1 valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+{
+    //customize carousel display
+    switch (option)
+    {
+        case iCarouselOptionWrap:
+        {
+            //normally you would hard-code this to YES or NO
+//            return self.wrap;
+            return YES;
+        }
+        case iCarouselOptionSpacing:
+        {
+            //add a bit of spacing between the item views
+            return value * 1.05f;
+        }
+        case iCarouselOptionFadeMax:
+        {
+            if (carousel.type == iCarouselTypeCustom)
+            {
+                //set opacity based on distance from camera
+                return 0.0f;
+            }
+            return value;
+        }
+        case iCarouselOptionShowBackfaces:
+        case iCarouselOptionRadius:
+        case iCarouselOptionAngle:
+        case iCarouselOptionArc:
+        case iCarouselOptionTilt:
+        case iCarouselOptionCount:
+        case iCarouselOptionFadeMin:
+        case iCarouselOptionFadeMinAlpha:
+        case iCarouselOptionFadeRange:
+        case iCarouselOptionOffsetMultiplier:
+        case iCarouselOptionVisibleItems:
+        {
+            return value;
+        }
+    }
+}
 
 #pragma mark -
 #pragma mark iCarousel taps

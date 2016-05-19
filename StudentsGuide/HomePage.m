@@ -54,7 +54,7 @@
 //        [self changeViewRTL:tempView];
 //    }
     
-    [self.arabicBtn setBackgroundColor:[UIColor customNavigationColor]];
+    [self.arabicBtn setBackgroundColor:[UIColor selectBtnColor]];
     [self.englishBtn setBackgroundColor:[UIColor clearColor]];
     [GlobalClass setLanguage:@"ar"];
     LocalizationSetLanguage(@"ar");
@@ -94,7 +94,7 @@
 
 - (IBAction)englishChoose:(id)sender  // chooose English
 {
-    [self.englishBtn setBackgroundColor:[UIColor customNavigationColor]];
+    [self.englishBtn setBackgroundColor:[UIColor selectBtnColor]];
     [self.arabicBtn setBackgroundColor:[UIColor clearColor]];
     
     

@@ -47,4 +47,19 @@
 
 "Please enter your contact number" = "الرجاء إدخال رقم الاتصال الخاصة بك";
 
-//
+//// school list page
+
+"FILTER BY AREA" = "النتائج حسب المنطقة";
+
+// detail page
+
+"ADDRESS" = "عنوان";
+"CONTACT" = "اتصال";
+"DESCRIPTION" = "وصف";
+"GALLERY" = "صالة عرض";
+"VIDEO" = "فيديو";
+
+
+
+
+

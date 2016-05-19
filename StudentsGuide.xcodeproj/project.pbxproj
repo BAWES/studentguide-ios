@@ -16,7 +16,6 @@
 		7713979E1CE5D7A80002CB9A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7713979D1CE5D7A80002CB9A /* MBProgressHUD.m */; };
 		771397A11CE5E8030002CB9A /* CourseListPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 771397A01CE5E8030002CB9A /* CourseListPage.m */; };
 		77307D291CEC3D3200003D1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77307D281CEC3D3200003D1F /* MapKit.framework */; };
-		77307D2C1CEC666D00003D1F /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77307D2B1CEC666D00003D1F /* iCarousel.m */; };
 		77307D2E1CEC6F0200003D1F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77307D2D1CEC6F0200003D1F /* VideoToolbox.framework */; };
 		77307D311CEC6F5C00003D1F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77307D2F1CEC6F5C00003D1F /* AVFoundation.framework */; };
 		77307D321CEC6F5C00003D1F /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77307D301CEC6F5C00003D1F /* AVKit.framework */; };
@@ -25,6 +24,7 @@
 		77307D3A1CEC9D7400003D1F /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 77307D381CEC9D7400003D1F /* play_button.png */; };
 		77307D3B1CEC9D7400003D1F /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77307D391CEC9D7400003D1F /* play_button@2x.png */; };
 		774651631CEC24F100857964 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 774651621CEC24F100857964 /* DetailCell.m */; };
+		7756C1631CEDCAC1008D0D95 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7756C1621CEDCAC1008D0D95 /* iCarousel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		77589D321CE441C6002A9C51 /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77589D311CE441C6002A9C51 /* HomePage.m */; };
 		77589D351CE4437E002A9C51 /* UIFont+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 77589D341CE4437E002A9C51 /* UIFont+CustomFont.m */; };
 		77589D3B1CE447E8002A9C51 /* DroidKufi-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77589D361CE447E8002A9C51 /* DroidKufi-Bold.ttf */; };
@@ -90,8 +90,6 @@
 		7713979F1CE5E8030002CB9A /* CourseListPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseListPage.h; sourceTree = "<group>"; };
 		771397A01CE5E8030002CB9A /* CourseListPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseListPage.m; sourceTree = "<group>"; };
 		77307D281CEC3D3200003D1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		77307D2A1CEC666D00003D1F /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
-		77307D2B1CEC666D00003D1F /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		77307D2D1CEC6F0200003D1F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		77307D2F1CEC6F5C00003D1F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		77307D301CEC6F5C00003D1F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -102,6 +100,8 @@
 		77307D391CEC9D7400003D1F /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_button@2x.png"; sourceTree = "<group>"; };
 		774651611CEC24F100857964 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		774651621CEC24F100857964 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		7756C1611CEDCAC1008D0D95 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		7756C1621CEDCAC1008D0D95 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		77589D301CE441C6002A9C51 /* HomePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
 		77589D311CE441C6002A9C51 /* HomePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
 		77589D331CE4437E002A9C51 /* UIFont+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CustomFont.h"; sourceTree = "<group>"; };
@@ -278,8 +278,8 @@
 		77307D3E1CECB7D800003D1F /* Gallery  */ = {
 			isa = PBXGroup;
 			children = (
-				77307D2A1CEC666D00003D1F /* iCarousel.h */,
-				77307D2B1CEC666D00003D1F /* iCarousel.m */,
+				7756C1611CEDCAC1008D0D95 /* iCarousel.h */,
+				7756C1621CEDCAC1008D0D95 /* iCarousel.m */,
 			);
 			name = "Gallery ";
 			sourceTree = "<group>";
@@ -659,9 +659,9 @@
 				9910F22A1CE3744600B96510 /* AppDelegate.m in Sources */,
 				9910F27A1CE3762B00B96510 /* UIColor+custom.m in Sources */,
 				77DBE41B1CEB4CCF00FE8AC5 /* SchoolsListPage.m in Sources */,
+				7756C1631CEDCAC1008D0D95 /* iCarousel.m in Sources */,
 				771397A11CE5E8030002CB9A /* CourseListPage.m in Sources */,
 				9910F26E1CE3750000B96510 /* LocalizeHelper.m in Sources */,
-				77307D2C1CEC666D00003D1F /* iCarousel.m in Sources */,
 				77B66B5C1CE7003200D3D971 /* SearchDisplayController.m in Sources */,
 				77DBE4171CEB43F400FE8AC5 /* SubCategoryListPage.m in Sources */,
 				77589D471CE48839002A9C51 /* Model.xcdatamodeld in Sources */,

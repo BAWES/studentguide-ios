@@ -1,7 +1,7 @@
 //
 //  iCarousel.h
 //
-//  Version 1.8.2
+//  Version 1.8.1
 //
 //  Created by Nick Lockwood on 01/04/2011.
 //  Copyright 2011 Charcoal Design
@@ -31,10 +31,8 @@
 //
 
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunknown-pragmas"
-#pragma clang diagnostic ignored "-Wreserved-id-macro"
-#pragma clang diagnostic ignored "-Wobjc-missing-property-synthesis"
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
 
 
 #import <Availability.h>
@@ -61,6 +59,13 @@ __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_8)
 #import <UIKit/UIKit.h>
 #else
 #import <Cocoa/Cocoa.h>
+
+#import "PrefixHeader.pch"
+
+#import "UIColor+custom.h"
+
+
+
 typedef NSView UIView;
 #endif
 
@@ -101,14 +106,15 @@ typedef NS_ENUM(NSInteger, iCarouselOption)
 };
 
 
-NS_ASSUME_NONNULL_BEGIN
-
 @protocol iCarouselDataSource, iCarouselDelegate;
 
 @interface iCarousel : UIView
-
-@property (nonatomic, weak_delegate) IBOutlet __nullable id<iCarouselDataSource> dataSource;
-@property (nonatomic, weak_delegate) IBOutlet __nullable id<iCarouselDelegate> delegate;
+{
+    UIView *bandImageView;
+    UIPageControl *pageControl;
+}
+@property (nonatomic, weak_delegate) IBOutlet id<iCarouselDataSource> dataSource;
+@property (nonatomic, weak_delegate) IBOutlet id<iCarouselDelegate> delegate;
 @property (nonatomic, assign) iCarouselType type;
 @property (nonatomic, assign) CGFloat perspective;
 @property (nonatomic, assign) CGFloat decelerationRate;
@@ -126,7 +132,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger numberOfItems;
 @property (nonatomic, readonly) NSInteger numberOfPlaceholders;
 @property (nonatomic, assign) NSInteger currentItemIndex;
-@property (nonatomic, strong, readonly) UIView * __nullable currentItemView;
+@property (nonatomic, strong, readonly) UIView *currentItemView;
 @property (nonatomic, strong, readonly) NSArray *indexesForVisibleItems;
 @property (nonatomic, readonly) NSInteger numberOfVisibleItems;
 @property (nonatomic, strong, readonly) NSArray *visibleItemViews;
@@ -148,11 +154,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)scrollToItemAtIndex:(NSInteger)index duration:(NSTimeInterval)duration;
 - (void)scrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated;
 
-- (nullable UIView *)itemViewAtIndex:(NSInteger)index;
+- (UIView *)itemViewAtIndex:(NSInteger)index;
 - (NSInteger)indexOfItemView:(UIView *)view;
 - (NSInteger)indexOfItemViewOrSubview:(UIView *)view;
 - (CGFloat)offsetForItemAtIndex:(NSInteger)index;
-- (nullable UIView *)itemViewAtPoint:(CGPoint)point;
+- (UIView *)itemViewAtPoint:(CGPoint)point;
 
 - (void)removeItemAtIndex:(NSInteger)index animated:(BOOL)animated;
 - (void)insertItemAtIndex:(NSInteger)index animated:(BOOL)animated;
@@ -166,12 +172,12 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol iCarouselDataSource <NSObject>
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel;
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view;
 
 @optional
 
 - (NSInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel;
-- (UIView *)carousel:(iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(nullable UIView *)view;
+- (UIView *)carousel:(iCarousel *)carousel placeholderViewAtIndex:(NSInteger)index reusingView:(UIView *)view;
 
 @end
 
@@ -188,6 +194,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)carouselWillBeginDecelerating:(iCarousel *)carousel;
 - (void)carouselDidEndDecelerating:(iCarousel *)carousel;
 
+- (void)carouselCurrentItemIndexUpdated:(iCarousel *)carousel;
+
+
 - (BOOL)carousel:(iCarousel *)carousel shouldSelectItemAtIndex:(NSInteger)index;
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index;
 
@@ -197,7 +206,5 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
-
-#pragma clang diagnostic pop
+#pragma GCC diagnostic pop
 
