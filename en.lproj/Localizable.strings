@@ -8,7 +8,8 @@
 
 // Home Page
 "English" = "English";
-"Arabic" = "Arabic";
+//"Arabic" = "Arabic";
+"Arabic" = "العربية";
 "Terms & Condition" = "Terms & Condition";
 
 // loading progess

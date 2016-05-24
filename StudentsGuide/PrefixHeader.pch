@@ -52,4 +52,7 @@
 #import "HCYoutubeParser.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MediaPlayer/MediaPlayer.h>
+
+#import "CoreDataHelper.h"
+
 #endif /* PrefixHeader_pch */

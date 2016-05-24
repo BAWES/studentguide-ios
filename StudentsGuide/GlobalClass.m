@@ -41,6 +41,27 @@
     }
     return self;
 }
+-(void)getMethod:(NSString *)url user:(NSString *)user_id  PostBody:(NSString *)body method:(NSString *)Method completion:(void(^)(NSDictionary* jsonDict))handler
+{
+    __block STHTTPRequest *request = [STHTTPRequest requestWithURLString:[NSString stringWithFormat:@"%@",url]];
+    request.HTTPMethod = Method;
+    
+    
+    request.completionBlock=^(NSDictionary *headers, NSString *body)
+    {
+        NSDictionary *jsonDict  = [NSJSONSerialization JSONObjectWithData:[body dataUsingEncoding:NSUTF8StringEncoding]options:0 error:NULL];
+        handler(jsonDict);
+    };
+        request.errorBlock=^(NSError *error)
+    {
+        NSLog(@"Error: %@", [error localizedDescription]);
+    };
+    [request startAsynchronous];
+
+}
+
+
+
 # pragma mark - Alert
 +(void)showAlertwithtitle:(NSString *)title message:(NSString *)Message view:(UIViewController *)View
 
@@ -299,6 +320,16 @@
     [MBProgressHUD hideHUDForView:view animated:YES];
     
 }
+-(id)setReceiveList:(id)list
+{
+    return  [NSKeyedArchiver archivedDataWithRootObject:list];
+}
+
+-(id)getReceiveList:(id)archiveId
+{
+    return [NSKeyedUnarchiver unarchiveObjectWithData:archiveId];
+}
+
 //+(void)layoutChange:(UIView*)view
 //{
 //    NSString * userLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];

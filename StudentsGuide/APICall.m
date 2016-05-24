@@ -11,73 +11,47 @@
 @implementation APICall
 @synthesize receivedData;
 
-- (void)sendMethod:(NSString *)postUrl postDictionary:(NSDictionary *)postDictionary delegate:(id)className method:(NSString *)Method key:(NSString *)key;
++ (APICall *)sharedInstance
 {
-   
-    if ([GlobalClass networkConnectAvailable])
+    static APICall *sharedInstance;
+    
+    static dispatch_once_t once;
+    
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+- (id)init
+{
+    self = [super init];
+    if (self)
     {
-        __block STHTTPRequest *request = [STHTTPRequest requestWithURLString:[NSString stringWithFormat:@"%@",postUrl]];
-       
-        classNameDelegate = className;
-        keyString = key;
-        
-        if ([Method isEqualToString:@"GET"])
-        {
-             request.HTTPMethod = @"GET";
-
-        }
-        else if([Method isEqualToString:@"RAW"])
-        {
-            request.HTTPMethod = @"POST";
-            NSError * err;
-            NSData * jsonData = [NSJSONSerialization  dataWithJSONObject:postDictionary options:0 error:&err];
-            NSString * postBody = [[NSString alloc] initWithData:jsonData   encoding:NSUTF8StringEncoding];
-            request.rawPOSTData = [postBody dataUsingEncoding:NSUTF8StringEncoding];
- 
-        }
-        else if ([Method isEqualToString:@"POST"])
-        {
-            request.HTTPMethod = @"POST";
-            request.POSTDictionary=[postDictionary mutableCopy];
-        }
-        else if ([Method isEqualToString:@"GETPOST"])
-        {
-            request.GETDictionary=[postDictionary mutableCopy];
-        }
-        else if ([Method isEqualToString:@"GOOGLE"]){
-            
-        }
-        
-        request.completionBlock=^(NSDictionary *headers, NSString *responseBody)
-        {
-            
-            NSDictionary *jsonDict  = [NSJSONSerialization JSONObjectWithData:[responseBody dataUsingEncoding:NSUTF8StringEncoding]options:0 error:NULL];
-            
-            if ([jsonDict count]>0)
-            {
-                if([classNameDelegate respondsToSelector:@selector(didFinishLoading:key:)])
-                    [classNameDelegate didFinishLoading:jsonDict key:keyString];
-                
-            }        
-        };
-        request.errorBlock = ^(NSError *error)
-        {
-            NSLog(@"-- error: %@", error);
-        };
-        
-        
-        [request startAsynchronous];
-        
     }
-    
-    
+    return self;
 }
 
-- (void)didFinishLoading:(NSDictionary *)dictonary key:(NSString *)key;
+
+-(void)getMethod:(NSString *)url user:(NSString *)user_id  PostBody:(NSString *)body method:(NSString *)Method View:(UIViewController*)view boolean:(BOOL)isFirst completion:(void(^)(NSDictionary* jsonDict))handler
+
 {
-   
+    
+    
+    __block STHTTPRequest *request = [STHTTPRequest requestWithURLString:[NSString stringWithFormat:@"%@",url]];
+        request.HTTPMethod = Method;
+        
+        
+        request.completionBlock=^(NSDictionary *headers, NSString *body)
+        {
+            
+            NSDictionary *jsonDict  = [NSJSONSerialization JSONObjectWithData:[body dataUsingEncoding:NSUTF8StringEncoding]options:0 error:NULL];
+            handler(jsonDict);
+        };
+        request.errorBlock=^(NSError *error)
+        {
+            NSLog(@"Error: %@", [error localizedDescription]);
+        };
+        [request startAsynchronous];
 }
-#pragma mark UIActivity Loading
-
 
 @end

@@ -173,12 +173,13 @@
         
         NSDictionary *views = NSDictionaryOfVariableBindings(loctaionBtn,imageView,callBtn,titleLbl,backBtn);
         
-        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[backBtn(35)]-[callBtn(50)]" options:0 metrics:nil views:views]];
+        
         
         [cell addConstraint: [NSLayoutConstraint constraintWithItem:imageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:imageView.superview attribute:NSLayoutAttributeCenterX multiplier:1 constant:-8]];
 
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[backBtn(35)]-[callBtn(50)]-[imageView(80)]" options:0 metrics:nil views:views]];
         
-         [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(80)]" options:0 metrics:nil views:views]];
+//         [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[imageView(80)]" options:0 metrics:nil views:views]];
         
         [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[titleLbl]-|" options:0 metrics:nil views:views]];
         

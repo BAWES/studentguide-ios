@@ -17,6 +17,11 @@
 
 - (void)viewDidLoad
 {
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    bgImageView.image = [UIImage imageNamed:@"ContactUsBG"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack: bgImageView];
+    
     [super viewDidLoad];
 
     self.naviagationImage.backgroundColor = [UIColor customNavigationColor];

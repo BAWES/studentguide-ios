@@ -82,11 +82,7 @@
     return [UIFont fontWithName:@"DroidKufi-Bold" size:14.0f];
 }
 
-// Awesome Font 
-+(UIFont*)customAwesomFont
-{
-    return [UIFont fontWithName:@"FontAwesome" size:30.0f];
-}
+
 
 
 @end

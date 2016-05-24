@@ -33,7 +33,7 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.bbc.com/arabic"]]];
     
     // add activity
-    [GlobalClass showGlobalProgressHUDWithTitle:@"" controller:self.view];
+    [GlobalClass showGlobalProgressHUDWithTitle:@"" controller:self];
     
     // set back button image
     [backBtn setImage:[UIImage imageNamed:@"Leftarrow"] forState:UIControlStateNormal];
@@ -113,14 +113,9 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     // remove activity
-    [GlobalClass dismissGlobalHUD:self.view];
+    [GlobalClass dismissGlobalHUD:self];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-
-}
 
 - (IBAction)back:(id)sender
 {

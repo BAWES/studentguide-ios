@@ -63,6 +63,10 @@
 
 +(void)setUPTextfield:(UITextField *)textField;
 
+-(id)getReceiveList:(id)archiveId;
 
+-(id)setReceiveList:(id)list;
+
+-(void)getMethod:(NSString *)url user:(NSString *)user_id  PostBody:(NSString *)body method:(NSString *)Method completion:(void(^)(NSDictionary* jsonDict))handler;
 
 @end

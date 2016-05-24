@@ -17,7 +17,9 @@
 
 }
 @property(nonatomic,strong) NSMutableData *receivedData;
-- (void)sendMethod:(NSString *)postUrl postDictionary:(NSDictionary *)postDictionary delegate:(id)className method:(NSString *)Method key:(NSString *)key;
-- (void)didFinishLoading:(NSDictionary *)dictonary key:(NSString *)key;
+
++ (APICall *)sharedInstance;
+
+-(void)getMethod:(NSString *)url user:(NSString *)user_id  PostBody:(NSString *)body method:(NSString *)Method View:(UIViewController*)view boolean:(BOOL)isFirst completion:(void(^)(NSDictionary* jsonDict))handler;
 
 @end

@@ -19,6 +19,7 @@
     
     UITableView *searchTableView;
     BOOL isSearch;
+    BOOL isFirst;
 }
 @property (strong, nonatomic) IBOutlet UITableView *courseTable;
 @property (strong, nonatomic) IBOutlet UIButton *searchBtn;

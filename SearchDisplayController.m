@@ -317,10 +317,6 @@
 {
     return 60;
 }
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 
-}
 
 @end

@@ -37,12 +37,15 @@
     [termsCondotion setBackgroundColor:[UIColor customBtnClearColor]];
     termsCondotion.titleLabel.font = [UIFont customEnglishFontRegular10];
     
+
 }
-
-- (void)didReceiveMemoryWarning
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-
+    
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    bgImageView.image = [UIImage imageNamed:@"Bg"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack: bgImageView];
 }
 
 # pragma mark - Button actions

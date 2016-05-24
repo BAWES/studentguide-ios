@@ -30,9 +30,6 @@
 +(UIFont*)customArabicFontRegular14;
 +(UIFont*)customArabicFontBold14;
 
-// Awesome Font
-+(UIFont*)customAwesomFont;
-
 
 
 @end

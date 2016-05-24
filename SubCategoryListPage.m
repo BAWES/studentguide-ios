@@ -23,8 +23,15 @@
 
 - (void)viewDidLoad
 {
+    UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    bgImageView.image = [UIImage imageNamed:@"ListBG"];
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack: bgImageView];
+    
     [super viewDidLoad];
-
+    
+   
+    
     self.subNavigationBarImg.backgroundColor = [UIColor customNavigationColor];
     
     isSearch = NO;
